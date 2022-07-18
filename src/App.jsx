@@ -17,7 +17,10 @@ const loggedIn = true;
 const voitures = ["Ford","Audi","Honda"];
 const voitures2 =[{"id":1,"nom":"Ford"},{"id":2,"nom":"Audi"},{"id":3,"nom":"Honda"}];
 //comportement
-
+  const handleClick = (event, param) => {
+  console.log(event);
+  console.log(param);
+};
 
   return (
     <div className="App">
@@ -42,6 +45,9 @@ const voitures2 =[{"id":1,"nom":"Ford"},{"id":2,"nom":"Audi"},{"id":3,"nom":"Hon
       <div>
           <p>Vous avez appuyer sur le bouton ci dessous {count} fois.</p>
           <button onClick={()=>setCount(count +1)}>Incrementer</button>
+          <br />
+          
+          <button onClick={event => handleClick(event, 'hello world')}>transporter les parametres</button>
       </div>
       <Footer />
     </div>
