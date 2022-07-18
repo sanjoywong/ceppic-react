@@ -1,5 +1,6 @@
-import logo from './logo.svg';
+
 import './App.css';
+import Header from './components/Header';
 
 function App() {
 
@@ -16,14 +17,14 @@ const voitures2 =[{"id":1,"nom":"Ford"},{"id":2,"nom":"Audi"},{"id":3,"nom":"Hon
 //comportement
 
 
-//rendu
-
   return (
     <div className="App">
+      <Header />
       {message}
       {message2}
       {calcul}
       {loggedIn && <p>Vous etes connecté</p>}
+      {loggedIn ? <p>Vous etes connecté</p> : <p>Inscription</p>}
       {voitures}
       <ul>
         {voitures.map((voiture)=>(
