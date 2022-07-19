@@ -24,6 +24,7 @@ const voitures2 =[{"id":1,"nom":"Ford"},{"id":2,"nom":"Audi"},{"id":3,"nom":"Hon
 
   return (
     <div className="App">
+      <img src="/assets/img/logo512.png" alt="" />
       <Header title="Logo" texte="React JS fond par Facebook" />
       {message}
       {message2}
