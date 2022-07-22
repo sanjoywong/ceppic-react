@@ -6,7 +6,7 @@ import BoutonIncreament from './components/BoutonIncreament';
 import StyleExample from './components/StyleExample';
 import { Users } from './Users';
 import RandomUser from './components/RandomUser';
-import {Routes,Route,link} from "react-router-dom";
+//import {Routes,Route,link} from "react-router-dom";
 
 function App() {
 

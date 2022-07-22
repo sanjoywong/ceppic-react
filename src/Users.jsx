@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import { userList } from "./components/data/data";
+import { userList } from "./data/data";
 import UserCardre from "./components/UserCard"
 
 const HomePageHeader = () => {
