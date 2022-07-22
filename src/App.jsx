@@ -5,6 +5,7 @@ import Header from './components/Header';
 import BoutonIncreament from './components/BoutonIncreament';
 import StyleExample from './components/StyleExample';
 import { Users } from './Users';
+import RandomUser from './components/RandomUser';
 
 function App() {
 
@@ -51,7 +52,7 @@ const voitures2 =[{"id":1,"nom":"Ford"},{"id":2,"nom":"Audi"},{"id":3,"nom":"Hon
           <li key={voiture.id}>{voiture.nom}</li>
         ))}
       </ul>
-      <Users />
+      <RandomUser />
      
       <Footer />
     </div>

@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import { userList } from "./components/data/data";
+import UserCardre from "./components/UserCard"
 
 const HomePageHeader = () => {
   return (
@@ -14,38 +15,14 @@ export const Users = () => {
   return (
     <>
       <HomePageHeader />
-      <div className="user-container">{userList.map((data,key)=>{
-        return(
-          <div key={key} >
-            <User
-              UserId={data.userId}
-              nom={data.nom}
-              prenom={data.prenom}
-              telephone={data.telephone} 
-              email={data.email}
-              profession={data.profession}
-              />
-            </div>
-        );
-      })}</div>
+      <div className="user-container">{userList.map((data)=>(
+        <UserCardre key={data.userId} data={data} />
+      ))}</div>
     </>
   );
 };
 
-const User = ({ UserId, nom, prenom, telephone,email,profession }) => {
-  if (!UserId) return <div />;
-  return (
-    <div>
-        <h5>{UserId}</h5>         
-            <h5>{nom}</h5>
-            <h4>{prenom}</h4>
-            <p>{telephone}</p>
-            <h5>{email}</h5>
-            <h5>{profession}</h5>
-          
-    </div>
-  );
-};
+
 
 const User1 = ({ UserId, nom, prenom, telephone,email,profession }) => {
   if (!UserId) return <div />;
