@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import { userList } from "./data";
+import { userList } from "./components/data/data";
 
 const HomePageHeader = () => {
   return (
@@ -16,12 +16,15 @@ export const Users = () => {
       <HomePageHeader />
       <div className="user-container">{userList.map((data,key)=>{
         return(
-          <div key={key}>
+          <div key={key} >
             <User
               UserId={data.userId}
               nom={data.nom}
               prenom={data.prenom}
-              telephone={data.telephone} />
+              telephone={data.telephone} 
+              email={data.email}
+              profession={data.profession}
+              />
             </div>
         );
       })}</div>
@@ -29,7 +32,22 @@ export const Users = () => {
   );
 };
 
-const User = ({ UserId, nom, prenom, telephone }) => {
+const User = ({ UserId, nom, prenom, telephone,email,profession }) => {
+  if (!UserId) return <div />;
+  return (
+    <div>
+        <h5>{UserId}</h5>         
+            <h5>{nom}</h5>
+            <h4>{prenom}</h4>
+            <p>{telephone}</p>
+            <h5>{email}</h5>
+            <h5>{profession}</h5>
+          
+    </div>
+  );
+};
+
+const User1 = ({ UserId, nom, prenom, telephone,email,profession }) => {
   if (!UserId) return <div />;
   return (
     <table>
@@ -46,6 +64,12 @@ const User = ({ UserId, nom, prenom, telephone }) => {
           </td>
           <td>
             <p>{telephone}</p>
+          </td>
+          <td>
+            <h5>{email}</h5>
+          </td>
+          <td>
+            <h5>{profession}</h5>
           </td>
         </tr>
       </tbody>
