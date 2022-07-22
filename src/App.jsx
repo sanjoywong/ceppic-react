@@ -1,11 +1,14 @@
-import {useState} from 'react';
+
 import './App.css';
 import Footer from './components/Footer';
 import Header from './components/Header';
+import BoutonIncreament from './components/BoutonIncreament';
+import StyleExample from './components/StyleExample';
+import { Users } from './Users';
 
 function App() {
 
-const [count,setCount] = useState(0);
+
 const message = <h1>Hello le monde</h1>
 const message2 = (<div>
   <h3>Block html</h3>
@@ -17,17 +20,22 @@ const loggedIn = true;
 const voitures = ["Ford","Audi","Honda"];
 const voitures2 =[{"id":1,"nom":"Ford"},{"id":2,"nom":"Audi"},{"id":3,"nom":"Honda"}];
 //comportement
-  const handleClick = (event, param) => {
-  console.log(event);
-  console.log(param);
-};
+
+
 
   return (
     <div className="App">
-      <img src="/assets/img/logo512.png" alt="" />
+      <img src="/assets/img/logo512.png" alt="React test"  style={{
+        width: '60px',
+        height : '70px',
+        border : 'solid 2px red'
+      }} />
+    <BoutonIncreament texte="le nombre de fois est" nb={45}/>
+
       <Header title="Logo" texte="React JS fond par Facebook" />
       {message}
       {message2}
+      <StyleExample />
       {calcul}
       {loggedIn && <p>Vous etes connecté</p>}
       {loggedIn ? <p>Vous etes connecté</p> : <p>Inscription</p>}
@@ -43,13 +51,8 @@ const voitures2 =[{"id":1,"nom":"Ford"},{"id":2,"nom":"Audi"},{"id":3,"nom":"Hon
           <li key={voiture.id}>{voiture.nom}</li>
         ))}
       </ul>
-      <div>
-          <p>Vous avez appuyer sur le bouton ci dessous {count} fois.</p>
-          <button onClick={()=>setCount(count +1)}>Incrementer</button>
-          <br />
-          
-          <button onClick={event => handleClick(event, 'hello world')}>transporter les parametres</button>
-      </div>
+      <Users />
+     
       <Footer />
     </div>
   );
