@@ -1,20 +1,31 @@
-import { useState,useEffect } from "react";
-export default function RandomUser(params) {
+import { useState, useEffect } from "react";
+import "./RandomUser.css";
 
-    const [users,setUsers] = useState([]);
-    
- useEffect( ()=>{
+export default function RandomUser() {
+  const [users, setUsers] = useState([]);
 
-    fetch('https://randomuser.me/api/?results=10').then(Response=>Response.json()).then(data=>setUsers(data.results))},[])
- 
+  useEffect(() => {
+    fetch("https://randomuser.me/api/?results=10")
+      .then((Response) => Response.json())
+      .then((data) => setUsers(data.results));
+  }, []);
 
-    console.log(users);
+  //console.log(users);
 
-    return(
-        <div className="randomusers">
-            <ul>
-
-            </ul>
-        </div>
-    );
-};
+  return (
+    <div className="randomusers">
+        {users.map((user) => (
+          <figure key={user.id.value}>
+            <img src={user.picture.large} alt={user.name.first} />
+            <figcaption>
+              <div>
+                {user.name.first}
+                {user.name.last}
+              </div>
+              <div>{user.email}</div>
+            </figcaption>
+          </figure>
+        ))} 
+    </div>
+  );
+}
