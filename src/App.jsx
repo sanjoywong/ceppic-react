@@ -6,7 +6,7 @@ import Header from "./components/Header";
 // import Users from "./components/Users";
 import { Routes, Route } from "react-router-dom";
 import About from "./pages/About";
-import Contact from "./pages/Contact";
+import Contact from "./pages/ContactForm";
 import Home from "./pages/Home";
 import Nav from "./components/Nav";
 import NotFound1 from "./pages/NotFound1";
