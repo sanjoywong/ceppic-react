@@ -36,3 +36,38 @@
     transform: rotate(360deg);
   }
 }
+
+.user-container {
+  padding-left: 3em;
+  padding-right: 3em;
+  margin-top: 3em;
+  display: flex;
+  justify-content: space-between;
+  
+}
+.aff{
+  width: 20em;
+  border : solid 2px black
+}
+
+  .header {
+    background-color: #f4e04d;
+    min-height: 6vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: #10375c;
+  }
+
+  table {
+    display: flex;
+    justify-content: center;
+    border: 1px solid gray;
+  }
+  td {
+    border: 1px solid gray;
+    width: 20em;
+  }
+  
