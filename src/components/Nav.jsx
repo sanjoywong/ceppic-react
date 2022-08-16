@@ -1,9 +1,9 @@
 import {Link} from "react-router-dom";
-import "./Nav.css"
+import "./Nav.css";
 export default function Nav() {
     return (
         <>
-        <nav>
+        <nav className="nav">
         <Link to="/home">Home</Link>     
         <Link to="/about">Abfout</Link>          
         <Link to="/contact">Contact</Link>

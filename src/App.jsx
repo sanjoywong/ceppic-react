@@ -9,7 +9,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Home from "./pages/Home";
 import Nav from "./components/Nav";
-import NotFound from "./components/NotFound";
+import NotFound1 from "./pages/NotFound1";
 
 function App() {
   return (
@@ -17,10 +17,10 @@ function App() {
       <Nav />
     
       <Routes>
-        <Route path="notfound" element={<NotFound/>}/>
-        <Route path="home" element={<Home/>}/>
+        <Route path="/" element={<Home/>}/>
         <Route path="about" element={<About />} />
         <Route path="contact" element={<Contact />} />
+        <Route path="*" element={<NotFound1/>}/>
       </Routes>
 
       <Header
