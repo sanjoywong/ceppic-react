@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useState } from "react";
 export default function ContactForm() {
   const [ nom, setNom ] = useState();
@@ -5,12 +6,21 @@ export default function ContactForm() {
   const [ message, setMessage ] = useState();
   const [submitted, setSubmitted] = useState(false);
 
-  console.log(message);
+  //console.log(message);
   const handleSubmit = (event)=>{
     event.preventDefault();
     const contacts={nom,email,message};
-    console.log(contacts);
-    setSubmitted(true);
+    //console.log(contacts);
+
+    axios
+     .post("http://localhost:4000/contacts" , contacts)
+     .then((response)=>{console.log("axios response=>",response);
+      setSubmitted(true);
+    })
+    .catch((error)=>{
+      console.log("axios error =>",error);
+    })
+
   };
 
   if (submitted) {
