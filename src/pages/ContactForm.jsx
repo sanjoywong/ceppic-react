@@ -1,12 +1,13 @@
 import { useState } from "react";
-export default function Contact() {
-  const { nom, setNom } = useState();
-  const { email, setEmail } = useState();
-  const { message, setMessage } = useState();
-  const {submitted, setSubmitted} = useState();
+export default function ContactForm() {
+  const [ nom, setNom ] = useState();
+  const [ email, setEmail ] = useState();
+  const [ message, setMessage ] = useState();
+  const [submitted, setSubmitted] = useState(false);
 
+  console.log(message);
   const handleSubmit = (event)=>{
-    event.preventdefault();
+    event.preventDefault();
     const contacts={nom,email,message};
     console.log(contacts);
     setSubmitted(true);
@@ -23,14 +24,14 @@ export default function Contact() {
   return (
     <div className="contact">
       <h1>Contact</h1>
-      <form action="POST" onSubmit={handleSubmit}>
+      <form method="POST" onSubmit={handleSubmit}>
         <div>
           <input
             type="text"
             name="nom"
             placeholder="votre nom"
             required
-            onChange={(event) => setNom(event.target.value)}
+            onChange={(e) => setNom(e.target.value)}
           />
         </div>
         <div>
@@ -39,7 +40,7 @@ export default function Contact() {
             name="email"
             placeholder="Email"
             required
-            onChange={(event) => setEmail(event.target.value)}
+            onChange={(e) => setEmail(e.target.value)}
           />
         </div>
         <div>
